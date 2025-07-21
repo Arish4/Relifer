@@ -35,7 +35,7 @@ exports.createpost = async (req, res) => {
 exports.getpost = async (req, res) => {
     try {
         const posts = await Post.find()
-            .sort({ createdAt: 1 }); // Recent posts first
+            .sort({ createdAt: -1 }); // Recent posts first
 
         res.status(200).json(posts);
     } catch (error) {

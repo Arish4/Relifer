@@ -7,14 +7,14 @@ export default function CreatePost() {
   const [text, setText] = useState('');
 
   const handlePost = async () => {
-    const token = await AsyncStorage.getItem('token'); // ✅ Get stored token
+    const token = await AsyncStorage.getItem('token'); //  Get stored token
 
     try {
       const res = await fetch(`${BASE_URL}/api/post/createpost`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`, // ✅ Use token automatically
+          'Authorization': `Bearer ${token}`, //  Use token automatically
         },
         body: JSON.stringify({ content: text }),
       });
